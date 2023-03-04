@@ -20,7 +20,7 @@ const seeMore=(limit,data)=>{
 
 const displayFetchData=(data)=>{
      const cardsContainer= document.getElementById('cards-container');
-     
+     cardsContainer.innerHTML="";
      for(singleData of data){
      const cardDiv= document.createElement('div');
      cardDiv.classList.add('col');
@@ -42,8 +42,9 @@ const displayFetchData=(data)=>{
           <i class="fa-solid fa-calendar-days"></i>
             <p style="font-size:12px">${singleData.published_in}</p>
           </div>
+          
           <div>
-          <i onclick="cardMoreInfo()" class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-right" onclick=" openModal('${singleData.id}')"></i>
           </div>
         </div>
      </div>
@@ -60,14 +61,17 @@ fetchItems(6);
 // for all cards
 const allCardButton= document.getElementById('see-more').addEventListener('click',function(){
     fetchItems();
-    allCardButton.classList.add('d-none');
+    document.getElementById('see-more').classList.add("d-none");
  })
 
-//  more info of card
+//  more info of card or modal
  
-const cardMoreInfo=()=>{
-    fetch('https://openapi.programming-hero.com/api/ai/tool/01')
-    .then(res=> res.json())
-    .then(data=>console.log(data));
-
-}
+const openModal=(id)=>{
+     url=`https://openapi.programming-hero.com/api/ai/tool/${id}`
+     fetch(url)
+     .then(res=> res.json())
+     .then(data=>console.log(data));
+     
+ const cardShowMoreInfo=(data)=>{
+  console.log(data);
+ }}
