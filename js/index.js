@@ -32,8 +32,8 @@ const displayFetchData=(data)=>{
          <ol>
          <li style="font-size:15px">${singleData.features[0]}</li>
          <li style="font-size:15px">${singleData.features[1]}</li>
-         <li style="font-size:15px">${singleData.features[2]}</li>
-         
+         <li style="font-size:15px">${singleData.features[2]?singleData.features[2]:'No data'}</li>
+         </ol>
      </div>
      <div class="card-footer ">
        <h6 class="width-bold">${singleData.name}</h6>
@@ -44,7 +44,7 @@ const displayFetchData=(data)=>{
           </div>
           
           <div>
-          <i class="fa-solid fa-arrow-right" onclick=" openModal('${singleData.id}')"></i>
+          <i  class="fa-solid fa-arrow-right" onclick="openModal('${singleData.id}')" data-bs-toggle="modal" data-bs-target="#exampleModal"></i>
           </div>
         </div>
      </div>
@@ -58,20 +58,22 @@ const displayFetchData=(data)=>{
 // calling for 6 cards only
 fetchItems(6);
 
-// for all cards
+// see more cards
 const allCardButton= document.getElementById('see-more').addEventListener('click',function(){
     fetchItems();
     document.getElementById('see-more').classList.add("d-none");
  })
 
-//  more info of card or modal
+//  more info in modal
  
 const openModal=(id)=>{
      url=`https://openapi.programming-hero.com/api/ai/tool/${id}`
      fetch(url)
      .then(res=> res.json())
-     .then(data=>console.log(data));
+     .then(data=>ShowModalInfo(data.data))
      
- const cardShowMoreInfo=(data)=>{
-  console.log(data);
- }}
+const ShowModalInfo=(data)=>{
+         
+    }}
+
+
