@@ -93,7 +93,7 @@ const lastCardModalShow=(data)=>{
   modalDiv.innerHTML=`
    <div class="modal-header">
   <div class="d-sm-flex">
-      <div class="border border-danger bg-warning-subtle w-50 p-3">
+      <div class="border border-danger bg-warning-subtle  p-3">
         <h5>${data.description? data.description:"No"}</h5>
         <div class="d-sm-flex justify-content-evenly m-2">
           <p class="p-2 fw-bold text-danger">Free of<br>cost/<br>Basic</p>
@@ -117,7 +117,7 @@ const lastCardModalShow=(data)=>{
            </div>
         </div>
       </div>
-      <div class="w-50 p-3">
+      <div class=" p-3">
         <img class="img-fluid m-2" src="${data.image_link[0]}" alt="">
         <h6>Can you give any Example?</h6>
         <p>No Not yet! Take a break</p>
@@ -143,7 +143,7 @@ const allcardModalShow=(data)=>{
     modalDiv.innerHTML=`
      <div class="modal-header">
     <div class="d-sm-flex">
-        <div class="p-2 border border-danger bg-warning-subtle w-50">
+        <div class="p-2 border border-danger bg-warning-subtle ">
           <h5>${data.description? data.description:"No"}</h5>
           <div class="d-sm-flex justify-content-evenly m-2">
             <p>Free of cost</p>
@@ -170,7 +170,7 @@ const allcardModalShow=(data)=>{
              </div>
           </div>
         </div>
-        <div class="w-50 p-3">
+        <div class="p-3">
           <img class="img-fluid m-2" src="${data.image_link[0]}" alt="">
           <h6>${data.input_output_examples[0].input?data.input_output_examples[0].input:"No Not yet! Take a break!"}</h6>
           <p>${data.input_output_examples[0].output?data.input_output_examples[0].output:"No Not yet! Take a break!"}</p>
@@ -193,7 +193,7 @@ const allcardModalShow=(data)=>{
     modalDiv.innerHTML=`
      <div class="modal-header">
     <div class="d-sm-flex">
-        <div class="p-2 border border-danger bg-warning-subtle w-50">
+        <div class="p-2 border border-danger bg-warning-subtle">
           <h5>${data.description? data.description:"No"}</h5>
           <div class="d-sm-flex justify-content-evenly m-2">
             <p class="p-2">${data.pricing[0].price?data.pricing[0].price:"Free of Cost"}
@@ -223,7 +223,7 @@ const allcardModalShow=(data)=>{
              </div>
           </div>
         </div>
-        <div class="w-50 p-3">
+        <div class=" p-3">
             <div>
             <img class="img-fluid m-2 " src="${data.image_link[0]}" alt=" ">
             <span class="badge text-bg-warning accuracy">${data.accuracy.score}%Accuracy</span>
