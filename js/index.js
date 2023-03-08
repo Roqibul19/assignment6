@@ -92,13 +92,13 @@ const lastCardModalShow=(data)=>{
   <div class="d-sm-flex">
       <div class="border border-danger bg-warning-subtle w-50 p-3">
         <h5>${data.description? data.description:"No"}</h5>
-        <div class="d-flex justify-content-evenly m-2">
+        <div class="d-sm-flex justify-content-evenly m-2">
           <p class="p-2 fw-bold text-danger">Free of<br>cost/<br>Basic</p>
           <p class="p-2 fw-bold text-success">Free of<br>cost/<br>Pro</p>
           <p class="p-2 fw-bold text-primary">Free of<br>cost/<br>Enterprise</p>
           
         </div>
-        <div class="d-flex justify-content-between">
+        <div class="d-sm-flex justify-content-between">
            <div>
              <h6 class="m-2">Features</h6>
            <ol>
@@ -120,7 +120,9 @@ const lastCardModalShow=(data)=>{
         <p>No Not yet! Take a break</p>
       </div>
   </div>
+  <div>
  <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+ </div>
 </div>
 </div>
 </div>
@@ -140,7 +142,7 @@ const allcardModalShow=(data)=>{
     <div class="d-sm-flex">
         <div class="p-2 border border-danger bg-warning-subtle w-50">
           <h5>${data.description? data.description:"No"}</h5>
-          <div class="d-flex justify-content-evenly m-2">
+          <div class="d-sm-flex justify-content-evenly m-2">
             <p>Free of cost</p>
             <p class="p-2">${data.pricing[1].price?data.pricing[1].price:"Free of Cost"}
              ${data.pricing[1].plan}</p>
@@ -148,7 +150,7 @@ const allcardModalShow=(data)=>{
              ${data.pricing[2].plan}</p>
             
           </div>
-          <div class="d-flex justify-content-between">
+          <div class="d-sm-flex justify-content-between">
              <div>
                <h6 class="m-2">Features</h6>
              <ol>
@@ -180,6 +182,64 @@ const allcardModalShow=(data)=>{
     `
     modalContainer.appendChild(modalDiv);
   }
+  else{
+    const modalContainer= document.getElementById('modal-container');
+    modalContainer.innerHTML='';
+    const modalDiv= document.createElement('div');
+    modalDiv.classList.add('modal-content');
+    modalDiv.innerHTML=`
+     <div class="modal-header">
+    <div class="d-sm-flex">
+        <div class="p-2 border border-danger bg-warning-subtle w-50">
+          <h5>${data.description? data.description:"No"}</h5>
+          <div class="d-sm-flex justify-content-evenly m-2">
+            <p class="p-2">${data.pricing[0].price?data.pricing[0].price:"Free of Cost"}
+             ${data.pricing[0].plan}</p>
+            <p class="p-2">${data.pricing[1].price?data.pricing[1].price:"Free of Cost"}
+             ${data.pricing[1].plan}</p>
+            <p class="p-2">${data.pricing[2].price?data.pricing[2].price:"Free of Cost"}
+             ${data.pricing[2].plan}</p>
+            
+          </div>
+          <div class="d-sm-flex justify-content-between">
+             <div>
+               <h6 class="m-2">Features</h6>
+             <ol>
+               <li>${data.features['1'].feature_name?data.features['1'].feature_name:"No data found"}</li>
+               <li>${data.features['2'].feature_name?data.features['2'].feature_name:"No data found"}</li>
+               <li>${data.features['3'].feature_name?data.features['3'].feature_name:"No data found"}</li>
+             </ol>
+             </div>
+             <div>
+               <h6 class="m-2">Integrations</h6>
+             <ol>
+               <li>${data.integrations[0]?data.integrations[0]:"No data found"}</li>
+               <li>${data.integrations[1]?data.integrations[1]:"No data found"}</li>
+               <li>${data.integrations[2]?data.integrations[2]:"No data found"}</li>
+             </ol>
+             </div>
+          </div>
+        </div>
+        <div class="w-50 p-2">
+            <div>
+            <img class="img-fluid m-2 " src="${data.image_link[0]}" alt=" ">
+            <span class="badge text-bg-warning accuracy">${data.accuracy.score}%Accuracy</span>
+            </div>
+
+          <h6>${data.input_output_examples[0].input?data.input_output_examples[0].input:"No Not yet! Take a break!"}</h6>
+          <p>${data.input_output_examples[0].output?data.input_output_examples[0].output:"No Not yet! Take a break!"}</p>
+        </div>
+    </div>
+    <div>
+   <button type="button" class="btn-close bg-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+   </div>
+  </div>
+  </div>
+  </div>
+    
   
-  
+    `
+    modalContainer.appendChild(modalDiv);
+  }
+
   }
