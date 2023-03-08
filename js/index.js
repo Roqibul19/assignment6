@@ -16,7 +16,7 @@ const seeMore=(limit,data)=>{
     }
 }
 
-// fetch data Display
+// fetch data Display 12 cards
 
 const displayFetchData=(data)=>{
      const cardsContainer= document.getElementById('cards-container');
@@ -51,20 +51,21 @@ const displayFetchData=(data)=>{
      </div>
      `
       cardsContainer.appendChild(cardDiv);
+      document.getElementById('loader').classList.add("d-none");
      }
  
      
 }
-// calling for 6 cards only
+// calling first for 6 cards only
 fetchItems(6);
 
-// see more cards button
+// show more cards button
 const allCardButton= document.getElementById('see-more').addEventListener('click',function(){
     fetchItems();
     document.getElementById('see-more').classList.add("d-none");
  })
 
-  // more info in modal
+  // for more information opening modal by each unique id
  
  const openModal=(id)=>{
     const url=`https://openapi.programming-hero.com/api/ai/tool/${id}`
@@ -82,6 +83,8 @@ const ShowModalInfo=(data,id)=>{
    }
 
 }
+// for last card's modal show
+
 const lastCardModalShow=(data)=>{
   const modalContainer= document.getElementById('modal-container');
   modalContainer.innerHTML='';
@@ -243,3 +246,8 @@ const allcardModalShow=(data)=>{
   }
 
   }
+
+  // loader part
+const loadSpiner=document.getElementById('see-more').addEventListener('click',function(){
+  document.getElementById('loader').classList.remove("d-none");
+})

@@ -17,16 +17,23 @@
     </header>
     <!-- cards -->
     <main>
+
            <section class="container mt-5">
             <div id="cards-container" class="row row-cols-1 row-cols-md-3 g-4">
                 
             </div>
            </section>
+           <!-- see more button and loader -->
            <section class="text-center mt-3 mb-2 ">
             <div>
+              <div id="loader" class="d-flex justify-content-center d-none">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
                 <button id="see-more" type="button" class="btn btn-primary mt-2">See more</button>
             </div>
-           
+           </section>
 
        <!-- modal -->
 
@@ -36,7 +43,9 @@
 <!-- Modal -->
 <div class="w-100 modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
    <div id="modal-container" class="modal-dialog modal-lg">
-      
+
+    <!-- accuracy -->
+    
   </main>
 
     <!-- js -->
