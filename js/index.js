@@ -117,7 +117,7 @@ const lastCardModalShow=(data)=>{
            </div>
         </div>
       </div>
-      <div class="w-50 p-2">
+      <div class="w-50 p-3">
         <img class="img-fluid m-2" src="${data.image_link[0]}" alt="">
         <h6>Can you give any Example?</h6>
         <p>No Not yet! Take a break</p>
@@ -170,7 +170,7 @@ const allcardModalShow=(data)=>{
              </div>
           </div>
         </div>
-        <div class="w-50 p-2">
+        <div class="w-50 p-3">
           <img class="img-fluid m-2" src="${data.image_link[0]}" alt="">
           <h6>${data.input_output_examples[0].input?data.input_output_examples[0].input:"No Not yet! Take a break!"}</h6>
           <p>${data.input_output_examples[0].output?data.input_output_examples[0].output:"No Not yet! Take a break!"}</p>
@@ -223,7 +223,7 @@ const allcardModalShow=(data)=>{
              </div>
           </div>
         </div>
-        <div class="w-50 p-2">
+        <div class="w-50 p-3">
             <div>
             <img class="img-fluid m-2 " src="${data.image_link[0]}" alt=" ">
             <span class="badge text-bg-warning accuracy">${data.accuracy.score}%Accuracy</span>
